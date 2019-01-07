@@ -9,19 +9,9 @@ Plug 'autozimu/LanguageClient-neovim', {
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-" for neovim
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" for vim 8 with python
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-  " the path to python3 is obtained through executing `:echo exepath('python3')` in vim
-  let g:python3_host_prog = "/absolute/path/to/python3"
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-"REQUIRED: Add a syntax file. YATS is the best
+" REQUIRED: Add a syntax file. YATS is the best
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
  " For async completion
@@ -35,13 +25,14 @@ Plug 'Shougo/denite.nvim'
 " Automatically close parenthesis, etc
 Plug 'Townk/vim-autoclose'
 
+Plug 'vim-airline/vim-airline'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'neomake/neomake'
 Plug 'kaicataldo/material.vim'
 call plug#end()
 
 let g:LanguageClient_serverCommands = {
-    \ 'reason': ['/home/ros/reason-language-server/reason-language-server.exe'],
+    \ 'reason': ['/home/simon/.config/nvim/reason-language-server/reason-language-server.exe'],
     \ }
 
 if (has("nvim"))
@@ -78,3 +69,7 @@ autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 " Personilzation here
 set number
 set splitbelow
+
+
+"netrw basic setup
+let g:netrw_banner = 0

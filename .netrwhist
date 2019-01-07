@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/ros/catkin_ws/src/robWhackAMole'
-let g:netrw_dirhist_2='/home/ros/rasbianIOLED/src'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/simon'
+let g:netrw_dirhist_2='/home/simon/reason_code/knitcity'
+let g:netrw_dirhist_3='/home/simon/reason_code/knitcity/src'
+let g:netrw_dirhist_4='/home/simon/typescript_code/rasbianIOLED'
+let g:netrw_dirhist_5='/home/simon/typescript_code/rasbianIOLED/src'
+let g:netrw_dirhist_6='/home/simon/cpp_code/APK-2018-final_project/src'
+let g:netrw_dirhist_7='/home/simon/cpp_code/APK-2018-final_project/src/src'
+let g:netrw_dirhist_8='/home/simon/cpp_code/APK-2018-final_project/src/src/util'
+let g:netrw_dirhist_9='/home/simon/reason_code/knitcity/src'
