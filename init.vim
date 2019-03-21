@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 "######### VIM CMAKE#########  
 Plug 'vhdirk/vim-cmake'
 Plug 'reasonml-editor/vim-reason-plus'
-
+Plug 'lervag/vimtex'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -23,8 +23,13 @@ Plug 'mrtazz/simplenote.vim'
 " REQUIRED: Add a syntax file. YATS is the best
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'ruanyl/vim-sort-imports'
+Plug 'renke/import-sort'
+" Track the engine.
+Plug 'SirVer/ultisnips'
 
-
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
 " Automatically close parenthesis, etc
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-commentary'
@@ -33,10 +38,19 @@ Plug 'neomake/neomake'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kaicataldo/material.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 "Dependencies
 source ~/.simplenoterc
 
+call deoplete#custom#var('omni', 'input_patterns', {
+          \ 'tex': g:vimtex#re#deoplete
+          \})
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname = 'nvr'
+let g:tex_flavor = 'latex'
 "Enaable deoplete
 function DeopleteEnable()
 	call deoplete#enable() 
@@ -45,12 +59,17 @@ endfunction
 function DeopleteDisable()
 	call deoplete#disable() 
 endfunction
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 let g:LanguageClient_serverCommands = {
-    \ 'reason': ['/home/simon/.config/nvim/reason-language-server/reason-language-server'],
+    \ 'reason': ['/home/simon/.config/nvim/reason-language-server/reason-language-server.exe'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'typescript':['javascript-typescript-stdio'],
-    \ 'typescript.tsx':['javascript-typescript-stdio']
     \ }
 
 if (has("nvim"))
@@ -99,11 +118,15 @@ let g:fzf_colors =
 "il_theme_style = 'default' | 'palenight' | 'dark'enable autocomplete
 let g:deoplete#enable_at_startup = 1
 let mapleader="+"
-
-
 "#################################################
-" Language client keybindings
+" TypeScript Language client keybindings
 "#################################################
+
+nnoremap <leader>ti  :TSImport<CR>
+nnoremap <leader>gd  :TSDef<CR>
+nnoremap <leader><F2>  :TSRename<CR>
+nnoremap gh  :TSType<CR>
+nnoremap <leader>si  :TsSortImports<CR>
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " Or map each action separately
@@ -112,6 +135,7 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> gf :call LanguageClient_textDocument_formatting()<CR>
 nnoremap <leader>f :Files<cr>
+nnoremap <leader>gf :GFiles<cr>
 "#################################################
 " yank keybindings
 "#################################################
@@ -134,16 +158,16 @@ autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 " Personilzation here
 set number
+set relativenumber
 set splitbelow
-autocmd FileType tex
-       \ call deoplete#custom#buffer_option('auto_complete', v:false)
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntastic_cs_checkers = ['code_checker']
 let g:rustfmt_autosave = 1
 
 	
 "netrw basic setup
 let g:netrw_banner = 0
-
+set noswapfile
 
 
 let g:prettier#autoformat = 0
