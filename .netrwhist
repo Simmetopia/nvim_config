@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/simon/brandheroes/brandheroes-webapp-v2/src/views/kpi/review'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/simon/rust_code/my-app/crate'
+let g:netrw_dirhist_2='/home/simon/rust_code/my-app/crate/src'
+let g:netrw_dirhist_3='/home/simon/brandheroes/cypress/cypress/integration'
+let g:netrw_dirhist_4='/home/simon/.config/nvim'
