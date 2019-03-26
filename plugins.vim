@@ -4,7 +4,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "######### VIM CMAKE#########  
-Plug 'vhdirk/vim-cmake'
+" Plug 'vhdirk/vim-cmake'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'lervag/vimtex'
 Plug 'autozimu/LanguageClient-neovim', {
