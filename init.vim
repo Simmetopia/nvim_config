@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 "######### VIM CMAKE#########  
-Plug 'vhdirk/vim-cmake'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'lervag/vimtex'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -18,7 +17,6 @@ Plug 'zchee/deoplete-jedi'
  " For Denite features
 Plug 'Shougo/denite.nvim'
 " Simple note in vim
-Plug 'mrtazz/simplenote.vim'
 " nice to have
 " REQUIRED: Add a syntax file. YATS is the best
 Plug 'HerringtonDarkholme/yats.vim'
@@ -43,7 +41,6 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 "Dependencies
-source ~/.simplenoterc
 
 call deoplete#custom#var('omni', 'input_patterns', {
           \ 'tex': g:vimtex#re#deoplete
@@ -68,7 +65,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:LanguageClient_serverCommands = {
-    \ 'reason': ['/home/simon/.config/nvim/reason-language-server/reason-language-server.exe'],
+    \ 'reason': ['~/.config/nvim/reason-language-server/reason-language-server.exe'],
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
@@ -117,7 +114,7 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 "il_theme_style = 'default' | 'palenight' | 'dark'enable autocomplete
 let g:deoplete#enable_at_startup = 1
-let mapleader="+"
+let mapleader=","
 "#################################################
 " TypeScript Language client keybindings
 "#################################################
