@@ -1,5 +1,7 @@
 "Plug
 
+let mapleader=","
+
 source ~/.config/nvim/plugins.vim
 "Dependencies
 source ~/.config/nvim/nerdtree.vimrc
@@ -15,7 +17,6 @@ let g:LanguageClient_serverCommands = {
 
 "il_theme_style = 'default' | 'palenight' | 'dark'enable autocomplete
 let g:deoplete#enable_at_startup = 1
-let mapleader=","
 
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
