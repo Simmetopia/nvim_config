@@ -19,7 +19,7 @@ let g:LanguageClient_serverCommands = {
 
 "il_theme_style = 'default' | 'palenight' | 'dark'enable autocomplete
 colorscheme gruvbox
-set background=light   " Setting light mode
+set background=dark   " Setting light mode
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 " Personilzation here
@@ -30,9 +30,23 @@ set smartcase
 set smarttab
 
 
-
 let g:rustfmt_autosave = 1
 
+let g:airline#extensions#languageclient#enabled = 1
+let g:ale_fix_on_save = 1
+nmap <F8> <Plug>(ale_fix)
+  let g:ale_fixers = {
+  \   'javascript': [
+  \       'eslint',
+  \   ],
+  \   'jsx': [
+  \       'eslint',
+  \   ],
+  \   'typescript': [
+  \       'prettier',
+  \       'eslint',
+  \   ]
+  \}
 	
 "netrw basic setup
 let g:netrw_banner = 0

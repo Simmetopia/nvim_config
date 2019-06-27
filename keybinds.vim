@@ -15,7 +15,7 @@ nnoremap  <leader>Y  "+yg_
 nnoremap  <leader>y  "+y
 nnoremap  <leader>yy  "+yy
 
-nnoremap <leader>l :PrettierAsync<CR>
+"nnoremap <leader>l :PrettierAsync<CR>
 " " Paste from clipboard
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P

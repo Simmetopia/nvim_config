@@ -1,5 +1,9 @@
 
 call plug#begin('~/.vim/plugged')
+Plug 'burner/vim-svelte'
+Plug 'metakirby5/codi.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'mhinz/vim-startify'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
