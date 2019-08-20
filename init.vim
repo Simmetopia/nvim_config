@@ -1,7 +1,6 @@
 "Plug
 
 source ~/.config/nvim/plugins.vim
-let g:deoplete#enable_at_startup = 1
 let mapleader=","
 "Dependencies
 source ~/.config/nvim/nerdtree.vimrc
@@ -9,15 +8,7 @@ source ~/.config/nvim/ale.vim
 source ~/.config/nvim/navigation.vim
 source ~/.config/nvim/keybinds.vim
 source ~/.config/nvim/utils.vim
-source ~/.config/nvim/typescript.vimrc
-"Enaable deoplete
-source ~/.config/nvim/latex.vim
-let g:LanguageClient_serverCommands = {
-    \ 'reason': ['/home/simon/.config/nvim/reason-language-server/reason-language-server.exe'],
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
 
-"il_theme_style = 'default' | 'palenight' | 'dark'enable autocomplete
 colorscheme gruvbox
 set background=dark   " Setting light mode
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
