@@ -21,18 +21,15 @@ set splitbelow
 set smartcase
 set smarttab
 
-set nofoldenable
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=syntax
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+" Set the shell to bash, since fish is too slow
 set shell=/usr/bin/bash
-let g:rustfmt_autosave = 1
 
+" Custom ALE linter signs
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.jsx = ['eslint']
@@ -44,19 +41,24 @@ nmap <F8> <Plug>(ale_fix)
 let g:netrw_banner = 0
 set noswapfile
 
-
-    let g:startify_lists = [
-          \ { 'type': 'files',     'header': ['   recently opened']            },
-          \ { 'type': 'sessions',  'header': ['   Sessions']       },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ ]
-let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'},{'bhw':'~/brandheroes/brandheroes-webapp-v2'},{'bha':'~/brandheroes/brandheroesapp'},{'bhb':'~/brandheroes/brandheroes-backend-gql'},{'ebw':'~/typescript_code/ergobasen-v2'},{'ebb':'~/typescript_code/ergobasen-server'},{'i3':'~/.config/i3/config'}]
+" Startify types
+let g:startify_lists = [
+  \ { 'type': 'files',     'header': ['   recently opened']            },
+  \ { 'type': 'sessions',  'header': ['   Sessions']       },
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ ]
+" Insert new bookmarks here
+" [keybind]:[location]
+let g:startify_bookmarks = [{'c': '~/.config/nvim/init.vim'},{'i3':'~/.config/i3/config'}]
+" Amount of recent files to remember
 let g:startify_files_number = 8
+" Should not persist a session automatic
 let g:startify_session_persistence = 0
-
+" However is a session was created manually, load that one
 let g:startify_session_autoload = 1
 
 let g:startify_change_to_dir = 0
+" When opening a file in a VCS , make that folder the PWD
 let g:startify_change_to_vcs_root = 1
 
 let g:ascii = [
@@ -76,5 +78,6 @@ let g:ascii = [
 
 let g:startify_custom_header =
           \ 'map(g:ascii + startify#fortune#boxed(), "\"   \".v:val")'
+"
 "" Exit terminal mode with ESC
 tnoremap <Esc> <C-\><C-n>
