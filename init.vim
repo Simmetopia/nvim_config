@@ -22,7 +22,7 @@ set smartcase
 set smarttab
 
 " Set the shell to bash, since fish is too slow
-set shell=/usr/bin/bash
+set shell=/bin/bash
 
 " Custom ALE linter signs
 let g:ale_sign_error = '✘'
@@ -30,10 +30,14 @@ let g:ale_sign_warning = '⚠'
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
+let g:ale_linters = {
+  \ 'typescript': ['tslint','eslint'],
+  \ }
+
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.jsx = ['eslint']
-let g:ale_fixers.typescript = ['prettier', 'eslint']
+let g:ale_fixers.typescript = ['prettier', 'eslint', 'tslint']
 let g:ale_fix_on_save = 1
 nmap <F8> <Plug>(ale_fix)
 	

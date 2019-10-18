@@ -14,7 +14,7 @@ Plug 'reasonml-editor/vim-reason-plus'
 Plug 'lervag/vimtex'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-dispatch'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'Townk/vim-autoclose'
