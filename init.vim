@@ -1,10 +1,9 @@
 "Plug
-
+if !exists('g:vscode')
 source ~/.config/nvim/plugins.vim
 let mapleader=","
 "Dependencies
 source ~/.config/nvim/nerdtree.vimrc
-source ~/.config/nvim/ale.vim
 source ~/.config/nvim/coc_config.vim
 source ~/.config/nvim/navigation.vim
 source ~/.config/nvim/keybinds.vim
@@ -24,27 +23,11 @@ set smarttab
 " Set the shell to bash, since fish is too slow
 set shell=/bin/bash
 
-" Custom ALE linter signs
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-highlight ALEErrorSign ctermbg=NONE ctermfg=red
-highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-
-let g:ale_linters = {
-  \ 'typescript': ['tslint','eslint'],
-  \ }
-
-let g:ale_fixers = {}
-let g:ale_fixers.javascript = ['eslint']
-let g:ale_fixers.jsx = ['eslint']
-let g:ale_fixers.typescript = ['prettier', 'eslint', 'tslint']
-let g:ale_fix_on_save = 1
-nmap <F8> <Plug>(ale_fix)
-	
 "netrw basic setup
 let g:netrw_banner = 0
 set noswapfile
-
+let g:UltiSnipsExpandTrigger = '<f5>'
+let g:UltiSnipsSnippetDirectories=["~/.config/nvim/custom_snippets"]
 " Startify types
 let g:startify_lists = [
   \ { 'type': 'files',     'header': ['   recently opened']            },
@@ -85,3 +68,4 @@ let g:startify_custom_header =
 "
 "" Exit terminal mode with ESC
 tnoremap <Esc> <C-\><C-n>
+endif
