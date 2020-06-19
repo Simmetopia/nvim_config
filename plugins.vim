@@ -1,6 +1,7 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'burner/vim-svelte'
+Plug 'benmills/vimux'
 Plug 'SirVer/ultisnips'
 Plug 'metakirby5/codi.vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}

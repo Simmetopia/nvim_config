@@ -8,6 +8,7 @@ source ~/.config/nvim/coc_config.vim
 source ~/.config/nvim/navigation.vim
 source ~/.config/nvim/keybinds.vim
 source ~/.config/nvim/utils.vim
+source ~/.config/nvim/jest_test.vim
 
 colorscheme gruvbox
 set background=dark   " Setting light mode
