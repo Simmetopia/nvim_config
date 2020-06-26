@@ -1,6 +1,8 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'burner/vim-svelte'
+Plug 'arcticicestudio/nord-vim'
+Plug 'mcchrish/nnn.vim'
 Plug 'benmills/vimux'
 Plug 'SirVer/ultisnips'
 Plug 'metakirby5/codi.vim'
@@ -29,5 +31,4 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'scrooloose/nerdtree'
 call plug#end()

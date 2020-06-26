@@ -3,15 +3,14 @@ if !exists('g:vscode')
 source ~/.config/nvim/plugins.vim
 let mapleader=","
 "Dependencies
-source ~/.config/nvim/nerdtree.vimrc
+source ~/.config/nvim/nnn.vimrc
 source ~/.config/nvim/coc_config.vim
 source ~/.config/nvim/navigation.vim
 source ~/.config/nvim/keybinds.vim
 source ~/.config/nvim/utils.vim
 source ~/.config/nvim/jest_test.vim
 
-colorscheme gruvbox
-set background=dark   " Setting light mode
+colorscheme nord
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 " Personilzation here
@@ -20,9 +19,6 @@ set relativenumber
 set splitbelow
 set smartcase
 set smarttab
-
-" Set the shell to bash, since fish is too slow
-set shell=/bin/bash
 
 "netrw basic setup
 let g:netrw_banner = 0
